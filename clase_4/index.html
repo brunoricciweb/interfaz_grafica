@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    div.names-container{
+        display: flex;
+        flex-wrap: wrap;
+        margin:15px;
+    }
+    div.names-container>input{
+        min-width: 200px;
+        width: 40%;
+        margin: 15px 
+    }
+    input[type='submit']{
+        width: 150px;
+        padding: 10px;
+        font-size: 20px;
+        color:white;
+        background-color: green;
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+
+    div.email-container{
+        width:100%;   
+    }
+    div.email-container>input{
+        width:100%;   
+    }
+</style>
+<body>
+    
+    <form action="https://webhook.site/bec32f5f-ee57-4fba-8011-da6c89304c35" method="post" onsubmit="return checkvalid()">
+        <div class="names-container">
+            <input type="text" name="first_name"  placeholder="First name">
+            <input type="text" name="last_name" placeholder="Last name">
+        </div>
+        <div class="email-container">
+            <input type="text" name="email"  >
+            <input type="text" name="zipcode" id="zip" placeholder="ZIP Code">
+
+        </div>
+        
+        <input type="submit" value="Login">
+    </form>
+
+</body>
+<script>
+
+    function checkvalid(){
+        let zip = document.getElementById('zip');
+        console.log(zip);
+        if(zip.value == ''){
+            return false;
+        }
+        return true;
+
+    }
+
+
+
+</script>
+</html>
