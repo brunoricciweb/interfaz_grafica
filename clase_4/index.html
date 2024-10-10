@@ -60,6 +60,9 @@
     function checkvalid(){
         let zip = document.getElementById('zip');
         console.log(zip);
+
+        zip.setCustomValidity('aaaaaaaaaaaaa'); // mensaje de error personalizado
+
         if(zip.value == ''){
             return false;
         }
