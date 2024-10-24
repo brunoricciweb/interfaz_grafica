@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+
+
+div{
+    text-align: center;
+    align-content: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+#div1{
+    left: 50px;
+    top:0;
+    position:absolute;
+}
+
+#div2{
+    left: 50px;
+    top:0;
+    position:absolute;
+}
+
+
+
+input:invalid{
+    border: 3px solid red;
+}
+
+#principal{
+    position: relative;
+    border: 2px dashed blue;
+    margin: 20px;
+    width: 500px;
+    height: 500px;
+}
+
+</style>
+<body>
+    
+    <div id="principal">
+
+        <div id="div1">
+            1
+        </div>
+        
+    </div>
+    <div id="div2">
+        2
+    </div>
+
+    <!-- <form action="" method="post" onsubmit="return validateForm()">
+        <input type="email" required name="" id="">
+        <input type="submit" name="" value="enviar">
+    </form> -->
+
+
+</body>
+
+<script>
+
+    function validateForm(){
+
+        let elem = document.querySelector('input[type=email]');
+        if(elem.checkValidity()){
+            elem.setCustomValidity('')
+            return true;
+        } else {
+            elem.setCustomValidity('está mal')           
+        }
+        return false;
+    }
+
+
+</script>
+</html>

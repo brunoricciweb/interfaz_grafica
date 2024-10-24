@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+@keyframes miAnimacion {
+  from {
+    left: 0;
+    top: 0;    
+  }
+  to {
+    left: 300px;
+    top: 300px;
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+
+div{
+    text-align: center;
+    align-content: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    position: relative;
+}
+
+#div1{
+    animation: miAnimacion 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#div2{
+    animation: miAnimacion 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate
+}
+
+</style>
+<body>
+    <div id="div1">
+        1
+    </div>
+    <div id="div2">
+        2
+    </div>
+</body>
+</html>
