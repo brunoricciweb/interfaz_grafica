@@ -14,3 +14,9 @@ Utilizar flexbox para distribuir los elementos.
 captar el 'mouseover' sobre el componente.
 
 3. Luego agregar una funcionalidad para que en caso de que se presionen los selectores de color (puntitos de color localizados en la parte inferior izquierda del componente) se modifique la URL de la imagen a mostrarse. La idea de esto es, si se presiona el selector rojo, que se muestre la variante roja del producto, etc.
+
+---
+
+4. Realizar nuevamente el punto `1` pero utilizando la librería bootstrap 5.3. 
+
+El objetivo de este ejercicio es experimentar cuánto más sencilla es la labor al utilizar Bootstrap, que nos permite no gastar tiempo en crear nuestros propios estilos, y usando estilos y componentes predefinidos.
