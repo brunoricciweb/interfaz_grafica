@@ -37,7 +37,8 @@ body{
 }
 
 .img-container>img{
-    height:inherit;
+    height:fit-content;
+    width: 100%;
 }
 
 .img-btn{
@@ -59,7 +60,7 @@ div{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding-inline: 10px;
     margin: 5px;
 }
 
@@ -142,6 +143,23 @@ div.box{
     border: 0.5px dashed orange; */
 }
 
+@keyframes desplegar {
+  from {
+    
+  }
+  to {
+
+  }
+}
+
+.spoiler{
+    /* transition: 0.5s ease; */
+}
+.hidden{
+    display: none;
+}
+
+
 </style>
 <body>
     <div class="main-container">
@@ -152,24 +170,28 @@ div.box{
         </div>  
 
         <div class="horiz-section">
-            <p class="product-name">White traditional long dress</p>
+            <p class="product-name">Remera manga corta</p>
             <div class="product-prices">
                 <p class="price primary">$1.23</p>
                 <p class="price secondary">$4.56</p>
             </div>
         </div>
 
+        <div class="horiz-section spoiler hidden" >
+            <p>Remera de 100% algodón, ajuste regular, extra suave.</p>
+        </div>
+
         <div class="horiz-section">
             <div class="color-selection">
-                <div class="selector red"></div>
-                <div class="selector green"></div>
-                <div class="selector black"></div>
+                <div value="red" class="selector red"></div>
+                <div value="green" class="selector green"></div>
+                <div value="blue" class="selector blue"></div>
             </div>
 
             <div class="size-selection">
-                <div class="box selector">S</div>
-                <div class="box selector">M</div>
-                <div class="box selector">L</div>
+                <div class="selector">S</div>
+                <div class="selector">M</div>
+                <div class="selector">L</div>
             </div>
         </div>
 
@@ -185,4 +207,32 @@ div.box{
         </div>
     </div>  
 </body>
+
+
+<script>
+
+    document.querySelector('div.main-container').addEventListener('mouseover', function(){
+        document.querySelector('div.spoiler').classList.remove('hidden');
+    })
+
+    document.querySelector('div.main-container').addEventListener('mouseout', function(){
+        document.querySelector('div.spoiler').classList.add('hidden');
+    })
+
+    let imgUrlByColor={
+        'red':'https://acdn.mitiendanube.com/stores/001/333/138/products/rem-rojo1-3c3a10a972a3f9e21e16957472045682-640-0.png',
+        'green':'https://acdn.mitiendanube.com/stores/002/140/898/products/remera-verde1-bd79a95f474f5f40eb16513293866497-640-0.jpg',
+        'blue':'https://acdn.mitiendanube.com/stores/002/140/898/products/remera-azul1-f298c4d74417595e9616513267212895-640-0.jpg',
+    }
+
+    for (const colorSelector of document.querySelectorAll('div.color-selection > div.selector')) {
+        colorSelector.addEventListener('click', function(evt){
+            // console.log(evt, evt.target.getAttribute('value'));
+            
+            document.querySelector('img').src = imgUrlByColor[evt.target.getAttribute('value')];
+        })
+    }
+    
+
+</script>
 </html>
