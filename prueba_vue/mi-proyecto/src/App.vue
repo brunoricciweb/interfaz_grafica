@@ -1,24 +1,38 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 
 import ProductCard from './components/ProductCard.vue'
+import { reactive } from 'vue'
 
-function mostrarEmisor(nombre){ // muestra cuál componente emitió el evento "product-click"
-  console.log('se hizo click en: ', nombre);
-}
+export default {
 
-const productList = [
-  {
-    nombre: 'Pantalon',
-    precio: 123
+  data: function () {
+    return {
+      productList: reactive([])
+    }
+  },components: {
+    ProductCard,
+    HelloWorld
   },
-  {
-    nombre: 'Camisa',
-    precio: 234
+  methods: {
+    mostrarEmisor: function (nombre) { // muestra cuál componente emitió el evento "product-click"
+      console.log('se hizo click en: ', nombre);
+    },
+    getProducts: async function () {
+      return await fetch('https://6724117f493fac3cf24d080b.mockapi.io/users')
+        .then(x => { return x.json(); })
+        .then(pList => {
+          this.productList = pList;
+          return pList;
+        })
+    }
+  },
+   mounted() {
+    this.getProducts();
+    console.log(this.productList);
   }
-]
 
+}
 </script>
 
 <template>
@@ -31,18 +45,16 @@ const productList = [
     </div>
   </header>
 
-  <ProductCard v-for="product in productList"
+  <ProductCard v-for="product in productList" 
     v-bind:nombre="product.nombre" 
-    v-bind:precio="product.precio" 
-    :key="product.nombre" 
-    v-on:product-click="mostrarEmisor"
+    v-bind:precio="product.precio"
+    :key="product.nombre" v-on:product-click="mostrarEmisor" 
   />
- 
 
 
   <!-- <ProductCard nombre="Pantalón" precio="1234.45" v-on:product-click="mostrarEmisor" ></ProductCard>
   <ProductCard nombre="Camisa" precio="567.45" v-on:product-click="mostrarEmisor"></ProductCard> -->
-  
+
 </template>
 
 <style scoped>
