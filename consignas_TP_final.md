@@ -13,3 +13,12 @@ Los requerimientos mínimos son los siguientes:
 - Acomodar los elementos mediante CSS grid y/o flexbox e implementar las buenas prácticas de código. 
 - La misma debe poder visualizarse correctamente en al menos dos resoluciones de pantalla distintas (por ejemplo, en pantalla de computadora y en pantalla de celular) utilizando las CSS media queries.
 - Implementar alguna lógica en JS (además de las validaciones del formulario) por ejemplo para mostrar algún elemento condicionalmente, o que suceda algo al presionar un botón, etc.
+
+---
+## Forma de entrega
+
+> La entrega se realizará mediante el aula virtual `https://aulasvirtuales.bue.edu.ar/` 
+
+- Los alumnos deberán subir en una carpeta comprimida `.zip` todos los archivos necesarios para su proyecto.
+- Entre estos archivos también se deberá un archivo `README.md` que contenga una breve explicación sobre el proyecto, qué hace, cómo funciona, etc.
+
