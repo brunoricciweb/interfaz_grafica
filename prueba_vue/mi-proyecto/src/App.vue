@@ -27,7 +27,7 @@ export default {
         })
     }
   },
-   mounted() {
+  mounted() {
     this.getProducts();
     console.log(this.productList);
   }
