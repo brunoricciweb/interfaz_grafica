@@ -1,23 +1,20 @@
-from selenium import webdriver
+from selenium import webdriver, Keys
 
 # Create a new instance of the Chrome driver
 driver = webdriver.Chrome()
 
 # Navigate to the website
 driver.get("https://www.google.com")
-
-# Validate the title
-expected_title = "Bug Report Form"
-actual_title = driver.title
+#'https://bug-free-space-engine-p454g5pvv672v5x-5500.app.github.dev/testing_automatizado/selenium/mi_app/'
 
 
-driver.find_elements_by_tag_name('textarea')  #.send_keys('pepe')
+barraBusqueda = driver.find_element(By.CSS_SELECTOR, "textarea")
+barraBusqueda.send_keys('gatitos')
 
-# if expected_title == actual_title:
-#     print("Title validation successful!")
-# else:
-#     print("Title validation failed. Expected:", expected_title, "Actual:", actual_title)
+# barraBusqueda.send_keys('gatitos', Keys.ENTER)
+# driver.find_element(By.ID, "submit").click()
 
-# Close the browser
-input('')
-driver.quit()
+input('')  // frena el programa hasta que se ingrese algún texto en la consola
+            //evita que se cierre el navegador
+
+driver.quit()   // cierra el navegador

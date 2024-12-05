@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="input1">Attribute 1:</label>
+    <input type="text" id="input1" name="input1"><br><br>
+    
+    <label for="input2">Attribute 2:</label>
+    <input type="text" id="input2" name="input2"><br><br>
+    
+    <label for="input3">Attribute 3:</label>
+    <input type="text" id="input3" name="input3"><br><br>
+    
+    <button onclick="sendData()">Send Data</button>
+    
+</body>
+<script>
+
+
+    async function sendData() {
+
+        const url = 'https://script.google.com/macros/s/AKfycbzDDrQ6BB0_KlfHYrfC78JF_q7PY6SH3E8-mRkra-La4YhhiqVa3wXJHIumjGOSTLqu/exec';
+        var data = {
+            attr1: document.getElementById('input1').value,
+            attr2: document.getElementById('input2').value,
+            attr3: document.getElementById('input3').value
+        };
+
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode:'no-cors',
+            body: JSON.stringify(data),
+        });
+
+    }
+
+</script>
+
+</html>
